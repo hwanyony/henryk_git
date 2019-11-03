@@ -5,12 +5,12 @@ stages:
 build:
     stage: build
     script:
-        - echo "building"
+        - echo $CI_JOB_STAGE
         - mkdir build
         - touch build/info.txt
 
 test:
     stage: test
     script:
-        - echo "Testing"
+        - echo  $CI_JOB_STAGE
         - test -f "build/info.txt"
